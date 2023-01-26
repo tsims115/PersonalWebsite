@@ -559,10 +559,25 @@ section {
   z-index: 1;
 }
 
+.portfolio-container {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+@media only screen and (width > 1000px) {
+  .portfolio .portfolio-item {
+    width: 500px !important;
+    height: 400px !important;
+    position: static !important;
+
+  }
+}
+
+
 .portfolio .portfolio-wrap::before {
   content: "";
   background: rgba(255, 255, 255, 0.5);
-  position: absolute;
+  
   left: 0;
   right: 0;
   top: 0;
@@ -1100,4 +1115,8 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+.hide {
+  display: none;
 }

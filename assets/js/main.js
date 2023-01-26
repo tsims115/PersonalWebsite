@@ -260,6 +260,19 @@
 
 })()
 
+let beenCalled = 0;
+let lastCard;
+
+function addDescription(e) {
+  const dataFilter = e.target.getAttribute('data-filter');
+  if (beenCalled === 1) {
+    $(`${lastCard} div`).addClass('hide');
+  }
+  $(`${dataFilter} div`).removeClass('hide');
+  lastCard = dataFilter;
+  beenCalled = 1;
+}
+
 function submitToAPI(e) {
   e.preventDefault();
        var Namere = /[A-Za-z]{1}[A-Za-z]/;
@@ -279,12 +292,10 @@ function submitToAPI(e) {
        }
 
   var name = $("#name").val();
-  var subject = $("#subject").val();
   var email = $("#email").val();
   var desc = $("textarea").val();
   var data = {
      name : name,
-     subject : subject,
      email : email,
      desc : desc
    };
