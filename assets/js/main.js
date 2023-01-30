@@ -307,13 +307,11 @@ function submitToAPI(e) {
     crossDomain: "true",
     contentType: "application/json; charset=utf-8",
     data: JSON.stringify(data),
-
-    
     success: function (res) {
       // clear form and show a success message
       alert("Your message has been sent!");
-      document.getElementById("form").reset();
-      location.reload();
+      $("form").remove();
+      $('.formDiv').append('<p>Thank You! I will try and get back to you as soon as possible.</p>');
       console.log(res);
     },
     error: function () {
@@ -321,3 +319,29 @@ function submitToAPI(e) {
       alert("Unable to process request");
     }});
 }
+
+function verify(token) {
+  $.ajax({
+      type: "POST",
+      url : `https://x2ksd44awl.execute-api.us-east-1.amazonaws.com/alpha/verify`,
+      dataType: "json",
+      crossDomain: "true",
+      data: JSON.stringify({token}),
+      contentType: "application/json; charset=utf-8",
+      success: function (res) {
+          // remove the block on the submit button
+          if (res.statusCode === 200) {
+              $('.sendButton').removeAttr('disabled');
+              $('.sendButton').removeClass('disable');
+              console.log("You have been verified!");
+          }
+          if (res.statusCode === 302) {
+              alert("Token was unable to be verified");
+              console.log("Token was unable to be verified");
+          }
+      },
+      error: function () {
+          // show an error message
+          alert("Unable to process request");
+      }});
+  };

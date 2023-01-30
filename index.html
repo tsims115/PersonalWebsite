@@ -26,10 +26,12 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" ></script>
   <script
-            src="https://code.jquery.com/jquery-3.6.1.js"
-            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-            crossorigin="anonymous"></script>
+    src="https://code.jquery.com/jquery-3.6.1.js"
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous">
+  </script>
 
   <!-- =======================================================
   * Template Name: iPortfolio - v3.10.0
@@ -226,7 +228,7 @@
 
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch formDiv">
             <form role="form" class="php-email-form" id="demo-form">
               <div class="row">
                 <div class="form-group col-md-6">
@@ -242,7 +244,8 @@
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
-              <div class="text-center"><button onClick="submitToAPI(event)" type="submit">Send Message</button></div>
+              <div class="form-group mb-2" style="width: 304px; margin: 0 auto;"><div class="g-recaptcha" data-callback="verify" data-sitekey="6LelYjYkAAAAAMdhSI190DAhB_AWmCBSMrhYT8WW"></div></div>
+              <div class="text-center"><button class="sendButton disable" onClick="submitToAPI(event)" type="submit" disabled>Send Message</button></div>
             </form>
           </div>
 
