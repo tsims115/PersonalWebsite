@@ -66,6 +66,7 @@
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="#WebsiteInfo" class="nav-link scrollto"><i class="bx bi-globe"></i> <span>Website Info</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -152,11 +153,11 @@
         
         <div class="portfolio-container d-flex "  data-aos="fade-up" data-aos-delay="100">
           
-          <div class="portfolio-item filter-app" style="margin-left: 80px">
-            <div class="portfolio-wrap ">
-              <video class="img-fluid" width="500" height="400" controls>
-                <source src="assets/video/blossom.mp4" type="video/mp4">
-                <source src="assets/video/blossom.ogg" type="video/ogg">
+          <div class=" portfolio-item filter-app ">
+            <div class="portfolio-wrap">
+              <video class="img-fluid"  controls>
+                <source href="assets/video/Blossom.mp4" type="video/mp4">
+                <source src="assets/video/Blossom.ogg" type="video/ogg">
                 Your browser does not support the video tag.
               </video>
               <!-- <img src="assets/img/portfolio/blossom1.png" class="img-fluid" alt="Blossom Picture"> -->
@@ -258,7 +259,18 @@
 
       </div>
     </section><!-- End Contact Section -->
-
+    <section id="WebsiteInfo">
+      <div class="section-title p-5">
+        <h2>About this website</h2>
+        <p>This website's front-end was made by using a combonation of JavaScript,
+          Jquery, and Bootstrap. The site also leverages a serverless backend built on AWS.
+          To host my website I used S3 because I needed something simple with no dedicated server.
+          On top of that I use AWS CloudFront and ACM to be able to secure my website connection.
+          The contact form and captcha both use an API built by API Gateway, and invoke Lambda 
+          functions to complete the job.
+        </p>
+      </div>
+    </section>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
